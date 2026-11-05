@@ -1,0 +1,36 @@
+{
+  "name": "lucky845-frontend-toolbox",
+  "private": true,
+  "version": "1.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "vite": "^5.4.11"
+  },
+  "description": "纯前端开发工具集：编码转换、数据格式化、图像处理等 23 个工具，本地运行、零上传、隐私安全。",
+  "license": "Apache-2.0",
+  "keywords": [
+    "toolbox",
+    "frontend",
+    "developer-tools",
+    "base64",
+    "json",
+    "qr-code",
+    "react",
+    "github-pages"
+  ],
+  "author": "lucky845"
+}
