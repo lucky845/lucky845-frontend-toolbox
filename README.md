@@ -6,7 +6,7 @@
 
 **🔗 在线使用：[frontend-toolbox.lucky845.top](https://frontend-toolbox.lucky845.top)**
 
-![Vite](https://img.shields.io/badge/Vite-7.3-646CFF?logo=vite&logoColor=white) ![React](https://img.shields.io/badge/React-18.3-61DAFB?logo=react&logoColor=white) ![Tailwind](https://img.shields.io/badge/Tailwind-3.4-38BDF8?logo=tailwindcss&logoColor=white) ![License](https://img.shields.io/badge/License-Apache--2.0-blue) ![Tools](https://img.shields.io/badge/Tools-23-4EC2C6)
+![Vite](https://img.shields.io/badge/Vite-7.3-646CFF?logo=vite&logoColor=white) ![React](https://img.shields.io/badge/React-19.3-61DAFB?logo=react&logoColor=white) ![Tailwind](https://img.shields.io/badge/Tailwind-4.3-38BDF8?logo=tailwindcss&logoColor=white) ![License](https://img.shields.io/badge/License-Apache--2.0-blue) ![Tools](https://img.shields.io/badge/Tools-23-4EC2C6)
 
 ---
 
@@ -127,8 +127,8 @@ frontend-toolbox.lucky845.top
 | 技术 | 用途 |
 | --- | --- |
 | Vite 7 | 构建工具 |
-| React 18 | UI 框架 |
-| Tailwind CSS 3 | 样式 |
+| React 19 | UI 框架 |
+| Tailwind CSS 4 | 样式 |
 | qrcode | 二维码生成 |
 
 ---
