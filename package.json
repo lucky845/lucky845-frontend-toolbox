@@ -17,7 +17,7 @@
     "@vitejs/plugin-react": "^5.2.0",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^4.3.3",
     "vite": "^7.3.7"
   },
   "description": "纯前端开发工具集：编码转换、数据格式化、图像处理等 23 个工具，本地运行、零上传、隐私安全。",
