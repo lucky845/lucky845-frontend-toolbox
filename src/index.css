@@ -1,6 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-base: #0C1216;
+  --color-teal: #4EC2C6;
+  --color-teal-dark: #0F7C81;
+  --color-amber: #A96F1A;
+}
 
 body {
   @apply bg-base text-gray-100;
