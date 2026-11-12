@@ -14,11 +14,11 @@
     "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.3.4",
+    "@tailwindcss/postcss": "^4.3.5",
     "@vitejs/plugin-react": "^5.2.0",
     "postcss": "^8.4.49",
     "tailwindcss": "^4.3.4",
-    "vite": "^7.3.7"
+    "vite": "^7.3.8"
   },
   "description": "纯前端开发工具集：编码转换、数据格式化、图像处理等 23 个工具，本地运行、零上传、隐私安全。",
   "license": "Apache-2.0",
