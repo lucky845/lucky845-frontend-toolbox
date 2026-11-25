@@ -149,7 +149,9 @@ Dependabot 每周检查一次依赖，按更新级别分成两个 PR 组：
 
 自动合并的前提是 `build` 检查通过 —— 仓库对 `main` 配置了必需的 status check（`build`），所以自动合并只会在构建成功后生效，构建失败则 PR 停在原地等人处理。merge 方式固定为 squash。
 
-> ⚠️ 自动合并使用的是仓库 secret `AUTOMERGE_PAT`（细粒度 PAT，仅授权本仓库的 `Contents: write` + `Pull requests: write`）。**必须用 PAT 而不是默认 `GITHUB_TOKEN`**：由 `GITHUB_TOKEN` 触发的合并不会触发 `deploy.yml` 的 `push` 事件，会出现「PR 合并成功但线上没更新」。未配置该 secret 时工作流会退回 `GITHUB_TOKEN`，仍可合并，但需要在合并后手动重跑部署。
+> ⚠️ 自动合并使用的是仓库 secret `AUTOMERGE_PAT`（细粒度 PAT，仅授权本仓库的 `Contents: write` + `Pull requests: write`）。**必须用 PAT 而不是默认 `GITHUB_TOKEN`**：由 `GITHUB_TOKEN` 触发的合并不会触发 `deploy.yml` 的 `push` 事件，会出现「PR 合并成功但线上没更新」。因此工作流在 secret 缺失时**直接失败而不是回退**——宁可不动，也不要制造一个静默不部署的合并。
+>
+> 注意 secret 要建在 **Secrets** 标签页，不要建到 **Variables**：Variables 不加密、不脱敏，工作流日志里会明文打印。
 
 ---
 

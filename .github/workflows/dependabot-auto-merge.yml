@@ -29,15 +29,23 @@ jobs:
       - name: Enable auto-merge for patch updates
         if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
         env:
-          # 优先用 PAT：GITHUB_TOKEN 合并的提交不会触发 deploy.yml 的 push 事件，
-          # 会导致合并成功但线上不部署。未配置 AUTOMERGE_PAT 时退回 GITHUB_TOKEN（能合并但不部署）。
-          GH_TOKEN: ${{ secrets.AUTOMERGE_PAT || secrets.GITHUB_TOKEN }}
+          # 必须用 PAT：GITHUB_TOKEN 合并产生的 push 不会触发 deploy.yml，会出现
+          # 「PR 合并成功但线上没更新」。因此这里不回退——缺失就直接失败，宁可不合并。
+          GH_TOKEN: ${{ secrets.AUTOMERGE_PAT }}
+          # 未 checkout 时 gh 无法从 .git 推断仓库，显式指定避免 "not a git repository"
+          GH_REPO: ${{ github.repository }}
           PR_URL: ${{ github.event.pull_request.html_url }}
         run: |
           set -euo pipefail
           echo "update-type=${{ steps.metadata.outputs.update-type }}"
           echo "dependency-group=${{ steps.metadata.outputs.dependency-group }}"
           echo "dependency-names=${{ steps.metadata.outputs.dependency-names }}"
+
+          if [ -z "${GH_TOKEN:-}" ]; then
+            echo "::error::AUTOMERGE_PAT 未配置。用 GITHUB_TOKEN 合并不会触发部署，故中止。"
+            exit 1
+          fi
+
           # 正常情况下 build 还在跑，PR 不可立即合并，--auto 会把合并排进队列。
           # 但若 build 恰好已经绿灯，GitHub 会拒绝 "Pull request is in clean status"，
           # 此时直接合并即可（检查已通过，风险等价）。
@@ -59,10 +67,11 @@ jobs:
       - name: Make sure auto-merge is actually armed
         if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
         env:
-          GH_TOKEN: ${{ secrets.AUTOMERGE_PAT || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.AUTOMERGE_PAT }}
+          GH_REPO: ${{ github.repository }}
           PR_URL: ${{ github.event.pull_request.html_url }}
         run: |
           set -euo pipefail
-          # 记录当前 auto-merge 状态，便于之后排查（未开启仓库 auto-merge 时这里会显示 null）
+          # 记录当前 auto-merge 状态，便于之后排查
           gh pr view "$PR_URL" --json autoMergeRequest,mergeStateStatus,mergeable \
             --jq '{autoMergeRequest, mergeStateStatus, mergeable}'
