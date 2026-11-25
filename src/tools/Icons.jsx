@@ -163,5 +163,115 @@ uuid: (
       <circle cx="12" cy="12" r="9" />
       <path d="M3 12h18M12 3c2.5 2.5 4 5.5 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.5-4-9s1.5-6.5 4-9z" />
     </svg>
+  ),
+  replace: (
+    <svg viewBox="0 0 24 24" {...base} className="w-5 h-5">
+      <path d="M4 7h13M14 4l3 3-3 3" />
+      <path d="M20 17H7M10 14l-3 3 3 3" />
+    </svg>
+  ),
+  dedup: (
+    <svg viewBox="0 0 24 24" {...base} className="w-5 h-5">
+      <path d="M8 6h13M8 12h13M8 18h13" />
+      <circle cx="4" cy="6" r="1" />
+      <circle cx="4" cy="12" r="1" />
+      <circle cx="4" cy="18" r="1" />
+    </svg>
+  ),
+  escape: (
+    <svg viewBox="0 0 24 24" {...base} className="w-5 h-5">
+      <path d="M15 4l-6 16" />
+      <path d="M5 9l-2 3 2 3M19 9l2 3-2 3" />
+    </svg>
+  ),
+  key: (
+    <svg viewBox="0 0 24 24" {...base} className="w-5 h-5">
+      <circle cx="8" cy="8" r="4" />
+      <path d="M11 11l8 8M16 16l2-2M18 18l2-2" />
+    </svg>
+  ),
+  database: (
+    <svg viewBox="0 0 24 24" {...base} className="w-5 h-5">
+      <ellipse cx="12" cy="6" rx="8" ry="3" />
+      <path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6" />
+      <path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" />
+    </svg>
+  ),
+  terminal: (
+    <svg viewBox="0 0 24 24" {...base} className="w-5 h-5">
+      <rect x="3" y="4" width="18" height="16" rx="2" />
+      <path d="M7 9l3 3-3 3M13 15h4" />
+    </svg>
+  ),
+  http: (
+    <svg viewBox="0 0 24 24" {...base} className="w-5 h-5">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M8 12l2.5 2.5L16 9" />
+    </svg>
+  ),
+  file: (
+    <svg viewBox="0 0 24 24" {...base} className="w-5 h-5">
+      <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
+      <path d="M14 3v5h5" />
+    </svg>
+  ),
+  network: (
+    <svg viewBox="0 0 24 24" {...base} className="w-5 h-5">
+      <rect x="9" y="3" width="6" height="4" rx="1" />
+      <rect x="3" y="17" width="6" height="4" rx="1" />
+      <rect x="15" y="17" width="6" height="4" rx="1" />
+      <path d="M12 7v4M6 17v-3h12v3" />
+    </svg>
+  ),
+  layers: (
+    <svg viewBox="0 0 24 24" {...base} className="w-5 h-5">
+      <path d="M12 3l9 5-9 5-9-5 9-5z" />
+      <path d="M3 13l9 5 9-5" />
+    </svg>
+  ),
+  gradient: (
+    <svg viewBox="0 0 24 24" {...base} className="w-5 h-5">
+      <rect x="3" y="4" width="18" height="16" rx="2" />
+      <path d="M3 17l7-7M3 21l11-11M8 21l11-11M13 21l9-9" opacity=".55" />
+    </svg>
+  ),
+  image: (
+    <svg viewBox="0 0 24 24" {...base} className="w-5 h-5">
+      <rect x="3" y="4" width="18" height="16" rx="2" />
+      <circle cx="8.5" cy="9.5" r="1.5" />
+      <path d="M21 15l-4-4-6 6-2-2-6 6" />
+    </svg>
+  ),
+  resize: (
+    <svg viewBox="0 0 24 24" {...base} className="w-5 h-5">
+      <rect x="3" y="3" width="12" height="12" rx="2" />
+      <path d="M13 21h8v-8" />
+      <path d="M21 21l-6-6" />
+    </svg>
+  ),
+  money: (
+    <svg viewBox="0 0 24 24" {...base} className="w-5 h-5">
+      <path d="M7 4l5 7 5-7" />
+      <path d="M12 11v9" />
+      <path d="M7 13h10M7 16.5h10" />
+    </svg>
+  ),
+  mask: (
+    <svg viewBox="0 0 24 24" {...base} className="w-5 h-5">
+      <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z" />
+      <circle cx="12" cy="12" r="2.5" />
+      <path d="M4 4l16 16" />
+    </svg>
+  ),
+  shadow: (
+    <svg viewBox="0 0 24 24" {...base} className="w-5 h-5">
+      <rect x="3" y="3" width="12" height="12" rx="2" />
+      <path d="M8 20h13V8" opacity=".5" />
+    </svg>
+  ),
+  convert: (
+    <svg viewBox="0 0 24 24" {...base} className="w-5 h-5">
+      <path d="M3 8h14l-3-3M21 16H7l3 3" />
+    </svg>
   )
 }
