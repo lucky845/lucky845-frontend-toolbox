@@ -38,7 +38,18 @@ jobs:
           echo "update-type=${{ steps.metadata.outputs.update-type }}"
           echo "dependency-group=${{ steps.metadata.outputs.dependency-group }}"
           echo "dependency-names=${{ steps.metadata.outputs.dependency-names }}"
-          gh pr merge --auto --squash "$PR_URL"
+          # 正常情况下 build 还在跑，PR 不可立即合并，--auto 会把合并排进队列。
+          # 但若 build 恰好已经绿灯，GitHub 会拒绝 "Pull request is in clean status"，
+          # 此时直接合并即可（检查已通过，风险等价）。
+          if ! gh pr merge --auto --squash "$PR_URL" 2>/tmp/merge-err.txt; then
+            if grep -qiE "clean status|already (merged|mergeable)" /tmp/merge-err.txt; then
+              echo "::notice::PR 已可直接合并，改为立即 squash 合并"
+              gh pr merge --squash "$PR_URL"
+            else
+              cat /tmp/merge-err.txt
+              exit 1
+            fi
+          fi
 
       - name: Skip auto-merge for minor or major updates
         if: steps.metadata.outputs.update-type != 'version-update:semver-patch'
