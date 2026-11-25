@@ -138,6 +138,19 @@ frontend-toolbox.lucky845.top
 
 **③ 验证**：`dig frontend-toolbox.lucky845.top CNAME +short` 应返回 `lucky845.github.io.`，随后访问 `https://frontend-toolbox.lucky845.top` 即可。
 
+### 依赖自动升级
+
+Dependabot 每周检查一次依赖，按更新级别分成两个 PR 组：
+
+| 分组 | 内容 | 处理方式 |
+| --- | --- | --- |
+| `npm-patch` / `actions-patch` | 仅 patch 级更新 | **自动合并**（`.github/workflows/dependabot-auto-merge.yml`） |
+| `npm-minor` / `actions-minor` | 含 minor 级更新 | 留人工审核 |
+
+自动合并的前提是 `build` 检查通过 —— 仓库对 `main` 配置了必需的 status check（`build`），所以自动合并只会在构建成功后生效，构建失败则 PR 停在原地等人处理。merge 方式固定为 squash。
+
+> ⚠️ 自动合并使用的是仓库 secret `AUTOMERGE_PAT`（细粒度 PAT，仅授权本仓库的 `Contents: write` + `Pull requests: write`）。**必须用 PAT 而不是默认 `GITHUB_TOKEN`**：由 `GITHUB_TOKEN` 触发的合并不会触发 `deploy.yml` 的 `push` 事件，会出现「PR 合并成功但线上没更新」。未配置该 secret 时工作流会退回 `GITHUB_TOKEN`，仍可合并，但需要在合并后手动重跑部署。
+
 ---
 
 ## 🧱 技术栈

@@ -1,0 +1,57 @@
+name: Dependabot auto-merge
+
+# 只自动合并 patch 级更新（dependabot.yml 里 npm-patch / actions-patch 两个组）。
+# minor 及以上一律留人工审核。
+on: pull_request
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: dependabot-automerge-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    # 双重护栏：只处理 Dependabot 开的 PR，且只在本仓库内生效
+    if: >-
+      github.event.pull_request.user.login == 'dependabot[bot]' &&
+      github.repository == 'lucky845/lucky845-frontend-toolbox'
+    steps:
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v3.1.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Enable auto-merge for patch updates
+        if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
+        env:
+          # 优先用 PAT：GITHUB_TOKEN 合并的提交不会触发 deploy.yml 的 push 事件，
+          # 会导致合并成功但线上不部署。未配置 AUTOMERGE_PAT 时退回 GITHUB_TOKEN（能合并但不部署）。
+          GH_TOKEN: ${{ secrets.AUTOMERGE_PAT || secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: |
+          set -euo pipefail
+          echo "update-type=${{ steps.metadata.outputs.update-type }}"
+          echo "dependency-group=${{ steps.metadata.outputs.dependency-group }}"
+          echo "dependency-names=${{ steps.metadata.outputs.dependency-names }}"
+          gh pr merge --auto --squash "$PR_URL"
+
+      - name: Skip auto-merge for minor or major updates
+        if: steps.metadata.outputs.update-type != 'version-update:semver-patch'
+        run: |
+          echo "::notice title=Skipped::${{ steps.metadata.outputs.update-type }} 需要人工审核：${{ steps.metadata.outputs.dependency-names }}"
+
+      - name: Make sure auto-merge is actually armed
+        if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
+        env:
+          GH_TOKEN: ${{ secrets.AUTOMERGE_PAT || secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: |
+          set -euo pipefail
+          # 记录当前 auto-merge 状态，便于之后排查（未开启仓库 auto-merge 时这里会显示 null）
+          gh pr view "$PR_URL" --json autoMergeRequest,mergeStateStatus,mergeable \
+            --jq '{autoMergeRequest, mergeStateStatus, mergeable}'
