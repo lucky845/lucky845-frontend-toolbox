@@ -1,28 +1,37 @@
-# 🧰 前端工具箱 Frontend Toolbox
+# 前端工具箱 Frontend Toolbox
 
-> 纯前端 · 本地运行 · 零上传 · 隐私安全 —— 一站式 Web 开发小工具集
+[![Deploy Pages](https://img.shields.io/github/actions/workflow/status/lucky845/lucky845-frontend-toolbox/deploy.yml?style=flat-square&label=pages&branch=main)](https://github.com/lucky845/lucky845-frontend-toolbox/actions/workflows/deploy.yml)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square)](LICENSE)
+[![Vite](https://img.shields.io/badge/Vite-7.3-646CFF?style=flat-square&logo=vite&logoColor=white)](#技术栈)
+[![React](https://img.shields.io/badge/React-19.3-61DAFB?style=flat-square&logo=react&logoColor=white)](#技术栈)
+[![Tailwind](https://img.shields.io/badge/Tailwind-4.3-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white)](#技术栈)
+[![Tools](https://img.shields.io/badge/Tools-41-4EC2C6?style=flat-square)](#功能一览)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](#贡献)
 
-41 个开发小工具，覆盖文本处理、编码转换、数据格式化、开发辅助、图像处理与数据对比六大类。所有数据在你的浏览器中处理，**不上传任何服务器**，隐私绝对安全。部署到 GitHub Pages 即可免费使用。
+41 个开发小工具，覆盖文本处理、编码转换、数据格式化、开发辅助、图像处理与数据对比六大类。所有数据在你的浏览器中处理，**不上传任何服务器**。
 
-**🔗 在线使用：[frontend-toolbox.lucky845.top](https://frontend-toolbox.lucky845.top)**
+**🔗 在线使用**：[frontend-toolbox.lucky845.top](https://frontend-toolbox.lucky845.top)
 
-![Vite](https://img.shields.io/badge/Vite-7.3-646CFF?logo=vite&logoColor=white) ![React](https://img.shields.io/badge/React-19.3-61DAFB?logo=react&logoColor=white) ![Tailwind](https://img.shields.io/badge/Tailwind-4.3-38BDF8?logo=tailwindcss&logoColor=white) ![License](https://img.shields.io/badge/License-Apache--2.0-blue) ![Tools](https://img.shields.io/badge/Tools-41-4EC2C6)
+> [!NOTE]
+> **纯前端 · 本地运行 · 零上传 · 隐私安全**。无后端、无账号、无遥测；图片、文本、密钥全程留在浏览器内。
+> 部署到 GitHub Pages 即可免费使用。
 
 ---
 
-## ✨ 特性
+## 特性
 
 - **纯本地运行** —— 无后端、无上传，数据不出浏览器
 - **离线可用** —— 部署后静态托管，无需任何服务器
 - **隐私安全** —— 图片、文本、密钥全程本地处理
-- **深色护眼主题** —— 底 #0C1216 / 强调 #4EC2C6
+- **深色护眼主题** —— 底 `#0C1216` / 强调 `#4EC2C6`
 - **按板块分类** —— 6 大板块，41 个工具，一目了然
 
 ---
 
-## 🗂️ 功能一览
+## 功能一览
 
-### 📝 文本处理
+### 文本处理
+
 | 工具 | 说明 |
 | --- | --- |
 | 大小写转换 | 小写/大写/标题/驼峰/帕斯卡/下划线/短横线/反转 |
@@ -35,7 +44,8 @@
 | 文本脱敏 | 身份证 / 银行卡 / 手机号 / 邮箱 / IP / 姓名一键打码 |
 | 金额大写 | 人民币金额 → 中文大写（支持负数、角分、亿级） |
 
-### 🔤 编码转换
+### 编码转换
+
 | 工具 | 说明 |
 | --- | --- |
 | Base64 编解码 | 支持中文 (UTF-8) |
@@ -45,7 +55,8 @@
 | 进制转换 | 2/8/10/16/32/36 进制互转，BigInt 无精度丢失 |
 | JWT 解析 | 本地解码 Header/Payload，解读 exp/iat 等声明 |
 
-### 📦 数据格式化
+### 数据格式化
+
 | 工具 | 说明 |
 | --- | --- |
 | JSON 格式化 | 校验 + 格式化/压缩 |
@@ -56,7 +67,8 @@
 | SQL 格式化 | 美化/压缩，关键字大小写可调 |
 | 哈希计算 | MD5 / SHA-1 / SHA-256 / SHA-384 / SHA-512 |
 
-### 🛠️ 开发辅助
+### 开发辅助
+
 | 工具 | 说明 |
 | --- | --- |
 | 正则测试 | 实时匹配 + 高亮结果 |
@@ -69,7 +81,8 @@
 | Cron 表达式 | 解析并描述执行周期 |
 | 假数据生成 | 23 种字段，导出 JSON / CSV / SQL |
 
-### 🖼️ 图像处理
+### 图像处理
+
 | 工具 | 说明 |
 | --- | --- |
 | 二维码生成 | 纯 Canvas 生成 + Logo 上传 + PNG 下载 |
@@ -80,7 +93,8 @@
 | 阴影生成 | 多图层 box-shadow / text-shadow 可视化调参 |
 | 图片格式转换 | PNG / JPEG / WebP 互转 + 缩放 + 质量压缩 |
 
-### ⚖️ 数据对比
+### 数据对比
+
 | 工具 | 说明 |
 | --- | --- |
 | 文本差异 | 行级 LCS diff，绿增红删 + 统计 |
@@ -89,22 +103,27 @@
 
 ---
 
-## 🚀 快速开始
+## 技术栈
+
+| 技术 | 用途 |
+| --- | --- |
+| Vite 7 | 构建工具 |
+| React 19 | UI 框架 |
+| Tailwind CSS 4 | 样式 |
+| qrcode | 二维码生成 |
+
+---
+
+## 快速开始
 
 ### 本地开发
 
 ```bash
 # 安装依赖（若默认 npm cache 报 EPERM，加 --cache /tmp/npmcache）
 npm install --cache /tmp/npmcache
-
-# 启动开发服务器
-npm run dev
-
-# 生产构建
-npm run build
-
-# 本地预览构建产物
-npm run preview
+npm run dev       # http://localhost:5173
+npm run build     # 产物输出到 dist/
+npm run preview   # 预览构建产物
 ```
 
 ### 部署到 GitHub Pages
@@ -114,6 +133,7 @@ npm run preview
 3. 推送后 `.github/workflows/deploy.yml` 自动构建并部署
 4. 默认地址：`https://<用户名>.github.io/<仓库名>/`
 
+> [!TIP]
 > 已配置 `base: './'` 相对路径，部署到子路径或独立域名都能正常工作。
 
 ### 绑定自定义域名（Cloudflare + GitHub Pages）
@@ -134,7 +154,9 @@ frontend-toolbox.lucky845.top
 | --- | --- | --- | --- |
 | CNAME | `frontend-toolbox` | `lucky845.github.io` | **仅 DNS**（灰色云朵，必须先关代理） |
 
-> ⚠️ 关键点：CNAME 目标必须填 GitHub 的用户主页域名（`<用户名>.github.io`），不能填仓库地址；开启橙色云朵（代理）时 GitHub 无法签发证书，等 GitHub 侧 HTTPS 生效后再按需开启代理，SSL 模式选 **Full** 或 **Full (strict)**。
+> [!IMPORTANT]
+> CNAME 目标必须填 GitHub 的用户主页域名（`<用户名>.github.io`），不能填仓库地址；
+> 开启橙色云朵（代理）时 GitHub 无法签发证书。等 HTTPS 生效后再按需开启代理，SSL 模式选 **Full** 或 **Full (strict)**。
 
 **③ 验证**：`dig frontend-toolbox.lucky845.top CNAME +short` 应返回 `lucky845.github.io.`，随后访问 `https://frontend-toolbox.lucky845.top` 即可。
 
@@ -149,24 +171,15 @@ Dependabot 每周检查一次依赖，按更新级别分成两个 PR 组：
 
 自动合并的前提是 `build` 检查通过 —— 仓库对 `main` 配置了必需的 status check（`build`），所以自动合并只会在构建成功后生效，构建失败则 PR 停在原地等人处理。merge 方式固定为 squash。
 
-> ⚠️ 自动合并使用的是仓库 secret `AUTOMERGE_PAT`（细粒度 PAT，仅授权本仓库的 `Contents: write` + `Pull requests: write`）。**必须用 PAT 而不是默认 `GITHUB_TOKEN`**：由 `GITHUB_TOKEN` 触发的合并不会触发 `deploy.yml` 的 `push` 事件，会出现「PR 合并成功但线上没更新」。因此工作流在 secret 缺失时**直接失败而不是回退**——宁可不动，也不要制造一个静默不部署的合并。
->
-> 注意 secret 要建在 **Secrets** 标签页，不要建到 **Variables**：Variables 不加密、不脱敏，工作流日志里会明文打印。
+> [!IMPORTANT]
+> 自动合并使用仓库 secret `AUTOMERGE_PAT`（细粒度 PAT，仅授权本仓库的 `Contents: write` + `Pull requests: write`）。
+> **必须用 PAT 而不是默认 `GITHUB_TOKEN`**：由 `GITHUB_TOKEN` 触发的合并不会触发 `deploy.yml` 的 `push` 事件，
+> 会出现「PR 合并成功但线上没更新」。工作流在 secret 缺失时**直接失败而不是回退**。
+> secret 要建在 **Secrets** 标签页，不要建到 **Variables**（Variables 不加密，日志会明文打印）。
 
 ---
 
-## 🧱 技术栈
-
-| 技术 | 用途 |
-| --- | --- |
-| Vite 7 | 构建工具 |
-| React 19 | UI 框架 |
-| Tailwind CSS 4 | 样式 |
-| qrcode | 二维码生成 |
-
----
-
-## 📁 项目结构
+## 项目结构
 
 ```
 lucky845-frontend-toolbox/
@@ -186,14 +199,15 @@ lucky845-frontend-toolbox/
 
 ---
 
-## 📄 License
+## License
 
 本项目基于 [Apache License 2.0](./LICENSE) 开源。
 
 ---
 
-## 🤝 贡献
+## 贡献
 
 欢迎提交 Issue 和 PR。如果你有想新增的工具或改进建议，欢迎参与。
 
+> [!NOTE]
 > **Privacy-first**：请确保新增工具也遵守「纯前端、零上传」的核心理念。
