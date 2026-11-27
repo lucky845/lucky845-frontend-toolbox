@@ -1,0 +1,867 @@
+{
+  "app": {
+    "title": "前端工具箱",
+    "subtitle": "纯本地 · 无上传 · 隐私安全",
+    "footer": "所有数据在浏览器本地处理，不会上传到任何服务器 · Apache 2.0 License",
+    "toolCount": "个工具 · {{count}} 个板块",
+    "githubTooltip": "GitHub 源码 · 欢迎 Star",
+    "siteTooltip": "作者主站 lucky845.top"
+  },
+  "categories": {
+    "text": "文本处理",
+    "encode": "编码转换",
+    "format": "数据格式化",
+    "dev": "开发辅助",
+    "image": "图像处理",
+    "compare": "数据对比"
+  },
+  "tools": {
+    "case": {
+      "name": "大小写转换",
+      "description": "文本大小写转换：全大写、全小写、首字母大写、驼峰、下划线等"
+    },
+    "count": {
+      "name": "文本统计",
+      "description": "字符、单词、行数、中英文字数统计，词频分析，阅读时间预估"
+    },
+    "lorem": {
+      "name": "假文生成",
+      "description": "生成 Lorem Ipsum 或中文假文，可自定义段落数、句子数、单词数"
+    },
+    "markdown": {
+      "name": "Markdown 预览",
+      "description": "实时 Markdown 编辑预览，支持 GFM 语法、代码高亮、数学公式"
+    },
+    "dedup": {
+      "name": "行去重排序",
+      "description": "文本行去重、排序、去空行、反转顺序，显示处理前后统计"
+    },
+    "replace": {
+      "name": "批量替换",
+      "description": "多模式文本替换，支持正则、忽略大小写、整词匹配、替换预览"
+    },
+    "escape": {
+      "name": "转义处理",
+      "description": "JSON/HTML/SQL/Shell/CSV/正则 的转义与反转义，逐行宽松处理模式"
+    },
+    "mask": {
+      "name": "文本脱敏",
+      "description": "自动识别并脱敏：身份证、银行卡、手机号、邮箱、IP、中文姓名等"
+    },
+    "money": {
+      "name": "金额大写",
+      "description": "阿拉伯数字金额转中文大写（壹贰叁...），支持元角分、整字控制"
+    },
+    "base64": {
+      "name": "Base64 编解码",
+      "description": "Base64 编码/解码，支持文件拖拽、UTF-8、URL 安全变体"
+    },
+    "url": {
+      "name": "URL 编解码",
+      "description": "URL 编码/解码，支持 application/x-www-form-urlencoded 和 RFC 3986"
+    },
+    "query": {
+      "name": "URL 参数解析",
+      "description": "URL 查询参数解析与构建，键值对表格展示、编码/解码切换"
+    },
+    "uuid": {
+      "name": "UUID 生成",
+      "description": "生成 UUID v1/v4/v7，批量生成、大小写、格式化选项"
+    },
+    "binary": {
+      "name": "进制转换",
+      "description": "2/8/10/16/32/36 进制互转，位视图、位运算表、大整数精确转换"
+    },
+    "jwt": {
+      "name": "JWT 解析",
+      "description": "JWT 解码、Header/Payload 解析、过期时间显示、签名验证提示"
+    },
+    "json": {
+      "name": "JSON 格式化",
+      "description": "JSON 格式化、压缩、语法高亮、错误定位、树形展开折叠"
+    },
+    "json-type": {
+      "name": "JSON 转类型",
+      "description": "JSON 转 TypeScript/Go/Java 类型定义，自动推断嵌套结构"
+    },
+    "xml": {
+      "name": "XML 格式化",
+      "description": "XML 格式化/压缩、语法高亮、XPath 查询、命名空间处理"
+    },
+    "yaml": {
+      "name": "YAML 转换",
+      "description": "YAML 与 JSON 互转、格式化、Schema 验证、锚点引用展开"
+    },
+    "csv": {
+      "name": "CSV 转换",
+      "description": "CSV 与 JSON 互转、表格预览、分隔符自定义、引号转义处理"
+    },
+    "sql": {
+      "name": "SQL 格式化",
+      "description": "SQL 美化/压缩，关键字大小写、缩进、多语句分割"
+    },
+    "hash": {
+      "name": "哈希计算",
+      "description": "MD5/SHA1/SHA256/SHA512 等哈希计算，支持文件、文本、HMAC"
+    },
+    "regex": {
+      "name": "正则测试",
+      "description": "正则表达式实时测试、匹配高亮、分组捕获、替换预览、常用模板"
+    },
+    "curl": {
+      "name": "cURL 转代码",
+      "description": "cURL 命令转 fetch/axios/Node.js/Python requests 代码"
+    },
+    "http-status": {
+      "name": "HTTP 状态码",
+      "description": "HTTP 状态码查询表，分类筛选、关键词搜索、中英对照"
+    },
+    "ua": {
+      "name": "UA 解析",
+      "description": "User-Agent 解析，浏览器/引擎/操作系统/设备识别，预设常见 UA"
+    },
+    "css-unit": {
+      "name": "CSS 单位转换",
+      "description": "px/rem/em/vw/vh/% 互转，自定义基准值、批量转换"
+    },
+    "timestamp": {
+      "name": "时间戳转换",
+      "description": "Unix 时间戳与日期时间互转，毫秒/秒、时区、相对时间"
+    },
+    "date-calc": {
+      "name": "日期计算",
+      "description": "日期间隔、加减天数、工作日计算、ISO 周、季度、闰年判断"
+    },
+    "cron": {
+      "name": "Cron 表达式",
+      "description": "Cron 表达式解析、下次执行时间、可视化编辑、常用预设"
+    },
+    "mock-data": {
+      "name": "假数据生成",
+      "description": "批量生成姓名、邮箱、手机号、地址、UUID 等假数据，JSON/CSV/SQL 导出"
+    },
+    "qr": {
+      "name": "二维码生成",
+      "description": "文本/URL 生成二维码，纠错级别、尺寸、颜色、Logo 嵌入"
+    },
+    "image-compress": {
+      "name": "图片压缩",
+      "description": "图片无损/有损压缩，质量滑块、尺寸限制、批量处理、体积对比"
+    },
+    "image-watermark": {
+      "name": "图片水印",
+      "description": "图片添加文字/图片水印，位置、透明度、旋转、平铺、批量处理"
+    },
+    "image-palette": {
+      "name": "图片取色",
+      "description": "图片主色提取，中位切分量化、色板比例、CSS 变量导出"
+    },
+    "gradient": {
+      "name": "渐变生成",
+      "description": "线性/径向/锥形渐变可视化编辑，色标拖拽、预设、CSS/Tailwind/React 导出"
+    },
+    "shadow": {
+      "name": "阴影生成",
+      "description": "多层 box-shadow/text-shadow 可视化编辑，预设、CSS/Tailwind/React/CSS变量 导出"
+    },
+    "image-convert": {
+      "name": "图片格式转换",
+      "description": "PNG/JPEG/WebP 互转，缩放模式、质量控制、白底填充、批量下载"
+    },
+    "diff": {
+      "name": "文本差异",
+      "description": "行级/字符级文本差异对比，统一/并排视图、语法高亮、合并操作"
+    },
+    "color": {
+      "name": "颜色转换",
+      "description": "HEX/RGB/HSL/HSV/CMYK 互转、对比度检测、色阶、调色板、WCAG 合规"
+    },
+    "password": {
+      "name": "密码生成",
+      "description": "可配置策略的随机密码生成，长度、字符集、熵值、批量、可读性模式"
+    }
+  },
+  "common": {
+    "input": "输入",
+    "output": "输出",
+    "copy": "复制",
+    "copied": "已复制",
+    "clear": "清空",
+    "download": "下载",
+    "settings": "设置",
+    "preview": "预览",
+    "format": "格式化",
+    "minify": "压缩",
+    "encode": "编码",
+    "decode": "解码",
+    "generate": "生成",
+    "parse": "解析",
+    "convert": "转换",
+    "compress": "压缩",
+    "compare": "对比",
+    "swap": "交换",
+    "reset": "重置",
+    "example": "示例",
+    "language": "语言",
+    "theme": "主题",
+    "dark": "深色",
+    "light": "浅色",
+    "auto": "自动",
+    "rows": "行数",
+    "indent": "缩进",
+    "encoding": "编码",
+    "delimiter": "分隔符",
+    "quote": "引号",
+    "header": "表头",
+    "ignoreCase": "忽略大小写",
+    "wholeWord": "整词匹配",
+    "regex": "正则",
+    "lineNumbers": "行号",
+    "wordWrap": "自动换行",
+    "readOnly": "只读",
+    "error": "错误",
+    "warning": "警告",
+    "success": "成功",
+    "info": "信息",
+    "loading": "加载中...",
+    "ready": "就绪",
+    "copiedToClipboard": "已复制到剪贴板",
+    "copyFailed": "复制失败",
+    "downloadReady": "下载准备就绪",
+    "noData": "无数据",
+    "noMatch": "无匹配",
+    "invalidInput": "输入无效",
+    "invalidFormat": "格式无效",
+    "parseError": "解析错误",
+    "formatError": "格式化错误",
+    "fileTooLarge": "文件过大",
+    "unsupportedFormat": "不支持的格式",
+    "dragDropHere": "拖拽文件到此处或点击选择",
+    "orClickToSelect": "或点击选择",
+    "pasteOrType": "粘贴或输入内容...",
+    "outputWillAppearHere": "输出将显示在此处...",
+    "characters": "字符",
+    "words": "词",
+    "lines": "行",
+    "bytes": "字节",
+    "paragraphs": "段落",
+    "sentences": "句子",
+    "readTime": "阅读时间",
+    "minutes": "分钟",
+    "seconds": "秒",
+    "copiedSuccess": "复制成功",
+    "downloadSuccess": "下载成功",
+    "settingsSaved": "设置已保存",
+    "resetDone": "已重置"
+  },
+  "caseTool": {
+    "uppercase": "全大写",
+    "lowercase": "全小写",
+    "capitalize": "首字母大写",
+    "camelCase": "驼峰命名",
+    "pascalCase": "帕斯卡命名",
+    "snakeCase": "下划线命名",
+    "kebabCase": "短横线命名",
+    "constantCase": "常量命名",
+    "sentenceCase": "句子首字母大写",
+    "toggleCase": "大小写反转",
+    "titleCase": "标题大小写"
+  },
+  "countTool": {
+    "totalChars": "总字符数",
+    "totalWords": "总词数",
+    "totalLines": "总行数",
+    "nonEmptyLines": "非空行数",
+    "chineseChars": "中文字符",
+    "englishWords": "英文单词",
+    "numbers": "数字",
+    "punctuation": "标点符号",
+    "spaces": "空白字符",
+    "charDistribution": "字符分布",
+    "wordFrequency": "词频统计",
+    "topWords": "高频词 Top {{n}}",
+    "readingTime": "预估阅读时间",
+    "chineseSpeed": "中文 {{speed}} 字/分",
+    "englishSpeed": "英文 {{speed}} 词/分"
+  },
+  "loremTool": {
+    "language": "语言",
+    "latin": "拉丁文",
+    "chinese": "中文",
+    "paragraphs": "段落数",
+    "sentences": "句子数",
+    "words": "单词数",
+    "startWithLorem": "以 Lorem ipsum 开头",
+    "generate": "生成假文"
+  },
+  "markdownTool": {
+    "editor": "编辑器",
+    "preview": "预览",
+    "split": "分栏",
+    "fullscreen": "全屏",
+    "toolbar": "工具栏",
+    "heading": "标题",
+    "bold": "加粗",
+    "italic": "斜体",
+    "strikethrough": "删除线",
+    "code": "行内代码",
+    "codeBlock": "代码块",
+    "link": "链接",
+    "image": "图片",
+    "blockquote": "引用",
+    "ul": "无序列表",
+    "ol": "有序列表",
+    "task": "任务列表",
+    "table": "表格",
+    "hr": "分割线",
+    "math": "数学公式",
+    "emoji": "表情"
+  },
+  "dedupTool": {
+    "removeDuplicates": "去重",
+    "sortAsc": "升序排序",
+    "sortDesc": "降序排序",
+    "removeEmpty": "去除空行",
+    "reverse": "反转顺序",
+    "trimWhitespace": "去除首尾空白",
+    "originalLines": "原始行数",
+    "resultLines": "结果行数",
+    "removedCount": "移除行数"
+  },
+  "replaceTool": {
+    "find": "查找",
+    "replaceWith": "替换为",
+    "addRule": "添加规则",
+    "replaceAll": "全部替换",
+    "preview": "预览",
+    "matches": "匹配项",
+    "replacements": "替换次数"
+  },
+  "escapeTool": {
+    "mode": "模式",
+    "escape": "转义",
+    "unescape": "反转义",
+    "json": "JSON",
+    "html": "HTML",
+    "sql": "SQL",
+    "shell": "Shell",
+    "csv": "CSV",
+    "regex": "正则",
+    "perLine": "逐行宽松处理",
+    "perLineHint": "每行独立处理，单行失败不影响其他行"
+  },
+  "maskTool": {
+    "maskChar": "脱敏字符",
+    "asterisk": "星号",
+    "hash": "井号",
+    "keepFirstLast": "保留首尾",
+    "customWords": "自定义敏感词",
+    "customWordsHint": "逗号或换行分隔，将按整词匹配脱敏",
+    "detected": "检测到",
+    "items": "项敏感信息",
+    "rules": "规则",
+    "idCard": "身份证",
+    "bankCard": "银行卡",
+    "phone": "手机号",
+    "email": "邮箱",
+    "ip": "IP 地址",
+    "chineseName": "中文姓名",
+    "qqWechat": "QQ/微信"
+  },
+  "moneyTool": {
+    "amount": "金额",
+    "placeholder": "输入金额，如 123456.78",
+    "full": "补「整」字",
+    "result": "大写金额",
+    "units": {
+      "yuan": "元",
+      "jiao": "角",
+      "fen": "分",
+      "zero": "零",
+      "integer": "整"
+    }
+  },
+  "base64Tool": {
+    "encode": "编码",
+    "decode": "解码",
+    "urlSafe": "URL 安全",
+    "utf8": "UTF-8",
+    "file": "文件",
+    "text": "文本",
+    "dropFile": "拖拽文件到此处",
+    "maxSize": "最大 10MB"
+  },
+  "urlTool": {
+    "encode": "编码",
+    "decode": "解码",
+    "component": "组件编码",
+    "fullUrl": "完整 URL",
+    "rfc3986": "RFC 3986",
+    "formEncoded": "application/x-www-form-urlencoded"
+  },
+  "queryTool": {
+    "parseUrl": "解析 URL",
+    "buildQuery": "构建查询串",
+    "urlPlaceholder": "粘贴完整 URL...",
+    "key": "键",
+    "value": "值",
+    "addParam": "添加参数",
+    "removeParam": "移除参数",
+    "decoded": "已解码",
+    "encoded": "已编码"
+  },
+  "uuidTool": {
+    "v1": "v1 (时间)",
+    "v4": "v4 (随机)",
+    "v7": "v7 (时间戳)",
+    "count": "生成数量",
+    "uppercase": "大写",
+    "braces": "带大括号",
+    "hyphens": "带连字符",
+    "generate": "生成 UUID"
+  },
+  "binaryTool": {
+    "fromBase": "源进制",
+    "toBase": "目标进制",
+    "autoDetect": "自动检测",
+    "bitView": "位视图",
+    "bitwiseOps": "位运算表",
+    "bigIntNotice": "超过 2^53 使用 BigInt 精确转换"
+  },
+  "jwtTool": {
+    "header": "Header",
+    "payload": "Payload",
+    "signature": "Signature",
+    "algorithm": "算法",
+    "expired": "已过期",
+    "expiresIn": "过期时间",
+    "issuedAt": "签发时间",
+    "notBefore": "生效时间",
+    "subject": "主题",
+    "issuer": "签发者",
+    "audience": "受众",
+    "jwtId": "JWT ID",
+    "decode": "解码",
+    "verifySignature": "验证签名（需公钥）",
+    "invalidToken": "无效的 Token"
+  },
+  "jsonTool": {
+    "format": "格式化",
+    "minify": "压缩",
+    "validate": "验证",
+    "treeView": "树形视图",
+    "copy": "复制",
+    "download": "下载",
+    "errorAt": "错误位置",
+    "line": "行",
+    "column": "列"
+  },
+  "jsonTypeTool": {
+    "typescript": "TypeScript",
+    "go": "Go",
+    "java": "Java",
+    "optional": "可选字段",
+    "readonly": "只读",
+    "generate": "生成类型",
+    "rootName": "根类型名",
+    "mergeArrays": "合并数组元素类型"
+  },
+  "xmlTool": {
+    "format": "格式化",
+    "minify": "压缩",
+    "xpath": "XPath 查询",
+    "namespaces": "命名空间",
+    "validate": "验证"
+  },
+  "yamlTool": {
+    "toJson": "转 JSON",
+    "toYaml": "转 YAML",
+    "validate": "验证",
+    "expandAnchors": "展开锚点"
+  },
+  "csvTool": {
+    "toJson": "转 JSON",
+    "toCsv": "转 CSV",
+    "delimiter": "分隔符",
+    "hasHeader": "首行作为表头",
+    "quoteChar": "引号字符",
+    "preview": "预览",
+    "rows": "行数"
+  },
+  "sqlTool": {
+    "format": "美化",
+    "minify": "压缩",
+    "uppercase": "关键字大写",
+    "lowercase": "关键字小写",
+    "preserve": "保持原样",
+    "indent": "缩进",
+    "splitStatements": "分割语句"
+  },
+  "hashTool": {
+    "algorithm": "算法",
+    "md5": "MD5",
+    "sha1": "SHA-1",
+    "sha256": "SHA-256",
+    "sha512": "SHA-512",
+    "hmac": "HMAC",
+    "key": "密钥",
+    "file": "文件",
+    "text": "文本",
+    "compare": "对比",
+    "match": "匹配",
+    "noMatch": "不匹配"
+  },
+  "regexTool": {
+    "pattern": "正则模式",
+    "flags": "标志位",
+    "testString": "测试字符串",
+    "replaceWith": "替换为",
+    "matches": "匹配结果",
+    "groups": "捕获组",
+    "matchInfo": "匹配信息",
+    "replacePreview": "替换预览",
+    "global": "全局",
+    "ignoreCase": "忽略大小写",
+    "multiline": "多行",
+    "sticky": "粘性",
+    "unicode": "Unicode",
+    "templates": "常用模板",
+    "email": "邮箱",
+    "url": "URL",
+    "ip": "IP",
+    "phone": "手机号",
+    "idCard": "身份证",
+    "date": "日期",
+    "time": "时间"
+  },
+  "curlTool": {
+    "curlInput": "cURL 命令",
+    "fetch": "fetch",
+    "axios": "axios",
+    "nodejs": "Node.js",
+    "python": "Python requests",
+    "parse": "解析",
+    "copy": "复制",
+    "methods": "支持的选项",
+    "url": "URL",
+    "method": "方法",
+    "headers": "请求头",
+    "data": "请求体",
+    "form": "表单",
+    "auth": "认证",
+    "cookie": "Cookie",
+    "userAgent": "User-Agent",
+    "referer": "Referer",
+    "followRedirect": "跟随重定向",
+    "insecure": "忽略证书",
+    "compressed": "压缩"
+  },
+  "httpStatusTool": {
+    "search": "搜索",
+    "filter": "分类",
+    "all": "全部",
+    "informational": "1xx 信息",
+    "success": "2xx 成功",
+    "redirection": "3xx 重定向",
+    "clientError": "4xx 客户端错误",
+    "serverError": "5xx 服务端错误",
+    "code": "代码",
+    "name": "名称",
+    "description": "说明"
+  },
+  "uaTool": {
+    "uaInput": "User-Agent",
+    "parse": "解析",
+    "presets": "预设",
+    "chromeWin": "Chrome Windows",
+    "safariMac": "Safari macOS",
+    "chromeAndroid": "Chrome Android",
+    "safariIos": "Safari iOS",
+    "wechat": "微信内置",
+    "edgeWin": "Edge Windows",
+    "browser": "浏览器",
+    "version": "版本",
+    "engine": "引擎",
+    "os": "操作系统",
+    "osVersion": "系统版本",
+    "device": "设备",
+    "arch": "架构"
+  },
+  "cssUnitTool": {
+    "fromUnit": "源单位",
+    "toUnit": "目标单位",
+    "baseValue": "基准值",
+    "baseFontSize": "基准字体大小",
+    "viewportWidth": "视口宽度",
+    "viewportHeight": "视口高度",
+    "px": "像素",
+    "rem": "rem",
+    "em": "em",
+    "vw": "vw",
+    "vh": "vh",
+    "percent": "百分比",
+    "batch": "批量转换",
+    "onePerLine": "每行一个值"
+  },
+  "timestampTool": {
+    "toDate": "时间戳转日期",
+    "toTimestamp": "日期转时间戳",
+    "now": "当前时间",
+    "milliseconds": "毫秒",
+    "seconds": "秒",
+    "timezone": "时区",
+    "relative": "相对时间",
+    "format": "格式化"
+  },
+  "dateCalcTool": {
+    "mode": "模式",
+    "diff": "日期间隔",
+    "addSubtract": "日期加减",
+    "startDate": "开始日期",
+    "endDate": "结束日期",
+    "years": "年",
+    "months": "月",
+    "days": "天",
+    "hours": "时",
+    "minutes": "分",
+    "seconds": "秒",
+    "workdaysOnly": "仅工作日",
+    "customWeekend": "自定义周末",
+    "result": "结果",
+    "daysDiff": "天数差",
+    "workdaysDiff": "工作日差",
+    "isoWeek": "ISO 周",
+    "dayOfYear": "年中第几天",
+    "quarter": "季度",
+    "isLeapYear": "闰年"
+  },
+  "cronTool": {
+    "expression": "Cron 表达式",
+    "parse": "解析",
+    "nextRuns": "下次执行时间",
+    "presets": "常用预设",
+    "everyMinute": "每分钟",
+    "everyHour": "每小时",
+    "daily": "每天",
+    "weekly": "每周",
+    "monthly": "每月",
+    "yearly": "每年",
+    "minute": "分",
+    "hour": "时",
+    "dayOfMonth": "日",
+    "month": "月",
+    "dayOfWeek": "周",
+    "description": "说明"
+  },
+  "mockDataTool": {
+    "fields": "字段",
+    "rows": "行数",
+    "format": "输出格式",
+    "json": "JSON",
+    "csv": "CSV",
+    "sql": "SQL INSERT",
+    "preview": "预览",
+    "generate": "生成",
+    "fieldTypes": {
+      "id": "ID",
+      "name": "姓名",
+      "email": "邮箱",
+      "phone": "手机号",
+      "uuid": "UUID",
+      "address": "地址",
+      "company": "公司",
+      "date": "日期",
+      "ip": "IP",
+      "sentence": "句子",
+      "paragraph": "段落",
+      "tags": "标签数组",
+      "number": "数字",
+      "boolean": "布尔值",
+      "avatar": "头像 URL",
+      "url": "网址",
+      "color": "颜色",
+      "lorem": "假文",
+      "username": "用户名",
+      "password": "密码",
+      "creditCard": "信用卡",
+      "iban": "IBAN",
+      "mac": "MAC 地址"
+    }
+  },
+  "qrTool": {
+    "content": "内容",
+    "size": "尺寸",
+    "margin": "边距",
+    "errorCorrection": "纠错级别",
+    "foreground": "前景色",
+    "background": "背景色",
+    "logo": "Logo",
+    "logoSize": "Logo 尺寸",
+    "download": "下载",
+    "formats": "格式"
+  },
+  "imageCompressTool": {
+    "quality": "质量",
+    "maxWidth": "最大宽度",
+    "maxHeight": "最大高度",
+    "format": "输出格式",
+    "originalSize": "原始大小",
+    "compressedSize": "压缩后大小",
+    "reduction": "压缩率",
+    "batch": "批量压缩",
+    "downloadAll": "打包下载"
+  },
+  "imageWatermarkTool": {
+    "textWatermark": "文字水印",
+    "imageWatermark": "图片水印",
+    "text": "文字",
+    "fontSize": "字号",
+    "fontColor": "字体颜色",
+    "opacity": "透明度",
+    "rotation": "旋转角度",
+    "position": "位置",
+    "tile": "平铺",
+    "spacing": "间距",
+    "image": "图片",
+    "scale": "缩放",
+    "positions": {
+      "topLeft": "左上",
+      "topCenter": "上中",
+      "topRight": "右上",
+      "centerLeft": "左中",
+      "center": "中心",
+      "centerRight": "右中",
+      "bottomLeft": "左下",
+      "bottomCenter": "下中",
+      "bottomRight": "右下"
+    }
+  },
+  "imagePaletteTool": {
+    "colorCount": "提取颜色数",
+    "algorithm": "算法",
+    "medianCut": "中位切分",
+    "palette": "色板",
+    "proportion": "占比",
+    "cssVariables": "CSS 变量",
+    "copyColor": "复制颜色"
+  },
+  "gradientTool": {
+    "type": "类型",
+    "linear": "线性渐变",
+    "radial": "径向渐变",
+    "conic": "锥形渐变",
+    "angle": "角度",
+    "shape": "形状",
+    "circle": "圆形",
+    "ellipse": "椭圆",
+    "position": "位置",
+    "stops": "色标",
+    "addStop": "添加色标",
+    "removeStop": "移除色标",
+    "random": "随机配色",
+    "reverse": "反转",
+    "presets": "预设",
+    "cssOutput": "CSS 输出",
+    "tailwindOutput": "Tailwind 任意值",
+    "reactOutput": "React 内联",
+    "canvasOutput": "Canvas 代码"
+  },
+  "shadowTool": {
+    "layers": "图层",
+    "addLayer": "添加图层",
+    "removeLayer": "移除图层",
+    "boxShadow": "盒子阴影",
+    "textShadow": "文字阴影",
+    "x": "X 偏移",
+    "y": "Y 偏移",
+    "blur": "模糊",
+    "spread": "扩展",
+    "color": "颜色",
+    "opacity": "透明度",
+    "inset": "内阴影",
+    "presets": "预设",
+    "loadPreset": "加载预设",
+    "cssOutput": "CSS 声明",
+    "tailwindOutput": "Tailwind shadow",
+    "reactOutput": "React 内联",
+    "cssVarsOutput": "CSS 变量"
+  },
+  "imageConvertTool": {
+    "format": "目标格式",
+    "scaleMode": "缩放模式",
+    "none": "不缩放",
+    "percent": "按百分比",
+    "maxDimension": "限制最长边",
+    "exact": "指定宽高",
+    "keepRatio": "保持比例",
+    "width": "宽度",
+    "height": "高度",
+    "quality": "质量",
+    "whiteBackground": "白底填充",
+    "originalSize": "原始大小",
+    "convertedSize": "转换后大小",
+    "download": "下载"
+  },
+  "diffTool": {
+    "left": "左侧",
+    "right": "右侧",
+    "mode": "模式",
+    "unified": "统一视图",
+    "sideBySide": "并排视图",
+    "lineLevel": "行级",
+    "charLevel": "字符级",
+    "ignoreWhitespace": "忽略空白",
+    "showLineNumbers": "显示行号",
+    "added": "新增",
+    "removed": "删除",
+    "modified": "修改",
+    "unchanged": "未变"
+  },
+  "colorTool": {
+    "input": "输入颜色",
+    "format": "格式",
+    "hex": "HEX",
+    "rgb": "RGB",
+    "rgba": "RGBA",
+    "hsl": "HSL",
+    "hsla": "HSLA",
+    "hsv": "HSV",
+    "cmyk": "CMYK",
+    "named": "命名色",
+    "contrast": "对比度",
+    "wcag": "WCAG",
+    "aa": "AA",
+    "aaa": "AAA",
+    "largeText": "大文本",
+    "normalText": "普通文本",
+    "shades": "色阶",
+    "tints": "浅色阶",
+    "palettes": "调色板",
+    "complementary": "互补色",
+    "analogous": "类似色",
+    "triadic": "三角色",
+    "tetradic": "矩形四角色"
+  },
+  "passwordTool": {
+    "length": "长度",
+    "uppercase": "大写字母",
+    "lowercase": "小写字母",
+    "numbers": "数字",
+    "symbols": "符号",
+    "excludeSimilar": "排除相似字符",
+    "excludeAmbiguous": "排除歧义字符",
+    "readable": "可读性模式",
+    "entropy": "熵值",
+    "bits": "位",
+    "strength": "强度",
+    "veryWeak": "极弱",
+    "weak": "弱",
+    "fair": "一般",
+    "good": "良好",
+    "strong": "强",
+    "veryStrong": "极强",
+    "generate": "生成",
+    "count": "生成数量",
+    "copyAll": "全部复制"
+  }
+}

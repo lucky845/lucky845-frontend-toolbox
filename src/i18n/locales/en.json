@@ -1,0 +1,867 @@
+{
+  "app": {
+    "title": "Frontend Toolbox",
+    "subtitle": "Local-only · No upload · Privacy safe",
+    "footer": "All data processed locally in your browser, never uploaded to any server · Apache 2.0 License",
+    "toolCount": "{{count}} tools · {{categories}} categories",
+    "githubTooltip": "GitHub source · Star welcome",
+    "siteTooltip": "Author site lucky845.top"
+  },
+  "categories": {
+    "text": "Text Processing",
+    "encode": "Encoding",
+    "format": "Data Formatting",
+    "dev": "Dev Tools",
+    "image": "Image Processing",
+    "compare": "Data Comparison"
+  },
+  "tools": {
+    "case": {
+      "name": "Case Converter",
+      "description": "Text case conversion: uppercase, lowercase, capitalize, camelCase, snake_case, etc."
+    },
+    "count": {
+      "name": "Text Statistics",
+      "description": "Character, word, line counts, CJK/English stats, word frequency, reading time estimate"
+    },
+    "lorem": {
+      "name": "Lorem Ipsum",
+      "description": "Generate Lorem Ipsum or Chinese placeholder text, customizable paragraphs, sentences, words"
+    },
+    "markdown": {
+      "name": "Markdown Preview",
+      "description": "Real-time Markdown editor with preview, GFM syntax, code highlighting, math formulas"
+    },
+    "dedup": {
+      "name": "Dedup & Sort Lines",
+      "description": "Deduplicate, sort, remove empty lines, reverse lines with before/after statistics"
+    },
+    "replace": {
+      "name": "Batch Replace",
+      "description": "Multi-pattern text replacement with regex, case-insensitive, whole word, preview"
+    },
+    "escape": {
+      "name": "Escape / Unescape",
+      "description": "JSON/HTML/SQL/Shell/CSV/Regex escape and unescape, per-line lenient mode"
+    },
+    "mask": {
+      "name": "Text Masking",
+      "description": "Auto-detect and mask: ID cards, bank cards, phones, emails, IPs, Chinese names, etc."
+    },
+    "money": {
+      "name": "Money to Chinese",
+      "description": "Convert Arabic numerals to Chinese financial numbers (壹贰叁...), with yuan/jiao/fen"
+    },
+    "base64": {
+      "name": "Base64 Encode/Decode",
+      "description": "Base64 encode/decode, file drag-drop, UTF-8, URL-safe variant"
+    },
+    "url": {
+      "name": "URL Encode/Decode",
+      "description": "URL encode/decode, application/x-www-form-urlencoded and RFC 3986"
+    },
+    "query": {
+      "name": "URL Query Parser",
+      "description": "Parse and build URL query strings, key-value table, encode/decode toggle"
+    },
+    "uuid": {
+      "name": "UUID Generator",
+      "description": "Generate UUID v1/v4/v7, batch, case, format options"
+    },
+    "binary": {
+      "name": "Base Converter",
+      "description": "Convert between bases 2/8/10/16/32/36, bit view, bitwise ops, BigInt precision"
+    },
+    "jwt": {
+      "name": "JWT Decoder",
+      "description": "Decode JWT, parse Header/Payload, show expiry, signature verification hint"
+    },
+    "json": {
+      "name": "JSON Formatter",
+      "description": "Format, minify, syntax highlight, error location, tree expand/collapse"
+    },
+    "json-type": {
+      "name": "JSON to Types",
+      "description": "Convert JSON to TypeScript/Go/Java types, auto-infer nested structures"
+    },
+    "xml": {
+      "name": "XML Formatter",
+      "description": "Format/minify XML, syntax highlight, XPath query, namespace handling"
+    },
+    "yaml": {
+      "name": "YAML Converter",
+      "description": "YAML ↔ JSON, format, schema validation, anchor/alias expansion"
+    },
+    "csv": {
+      "name": "CSV Converter",
+      "description": "CSV ↔ JSON, table preview, custom delimiter, quote escaping"
+    },
+    "sql": {
+      "name": "SQL Formatter",
+      "description": "Beautify/minify SQL, keyword case, indent, multi-statement split"
+    },
+    "hash": {
+      "name": "Hash Calculator",
+      "description": "MD5/SHA1/SHA256/SHA512, file/text/HMAC support"
+    },
+    "regex": {
+      "name": "Regex Tester",
+      "description": "Live regex test, match highlight, capture groups, replace preview, templates"
+    },
+    "curl": {
+      "name": "cURL to Code",
+      "description": "Convert cURL to fetch/axios/Node.js/Python requests code"
+    },
+    "http-status": {
+      "name": "HTTP Status Codes",
+      "description": "HTTP status code reference, category filter, keyword search, EN/CN"
+    },
+    "ua": {
+      "name": "UA Parser",
+      "description": "Parse User-Agent, browser/engine/OS/device detection, common presets"
+    },
+    "css-unit": {
+      "name": "CSS Unit Converter",
+      "description": "px/rem/em/vw/vh/% conversion, custom base, batch convert"
+    },
+    "timestamp": {
+      "name": "Timestamp Converter",
+      "description": "Unix timestamp ↔ datetime, ms/s, timezone, relative time"
+    },
+    "date-calc": {
+      "name": "Date Calculator",
+      "description": "Date diff, add/subtract, workdays, ISO week, quarter, leap year"
+    },
+    "cron": {
+      "name": "Cron Expression",
+      "description": "Parse cron, next run times, visual editor, common presets"
+    },
+    "mock-data": {
+      "name": "Mock Data Generator",
+      "description": "Batch generate names, emails, phones, addresses, UUIDs, export JSON/CSV/SQL"
+    },
+    "qr": {
+      "name": "QR Code Generator",
+      "description": "Text/URL to QR code, error correction, size, colors, logo embed"
+    },
+    "image-compress": {
+      "name": "Image Compressor",
+      "description": "Lossless/lossy compression, quality slider, size limits, batch, size comparison"
+    },
+    "image-watermark": {
+      "name": "Image Watermark",
+      "description": "Add text/image watermarks, position, opacity, rotation, tile, batch"
+    },
+    "image-palette": {
+      "name": "Image Palette",
+      "description": "Extract dominant colors, median cut quantization, palette proportions, CSS variables"
+    },
+    "gradient": {
+      "name": "Gradient Generator",
+      "description": "Linear/radial/conic visual editor, color stops, presets, CSS/Tailwind/React export"
+    },
+    "shadow": {
+      "name": "Shadow Generator",
+      "description": "Multi-layer box-shadow/text-shadow editor, presets, CSS/Tailwind/React/CSS vars export"
+    },
+    "image-convert": {
+      "name": "Image Format Converter",
+      "description": "PNG/JPEG/WebP conversion, scaling modes, quality, white background, batch download"
+    },
+    "diff": {
+      "name": "Text Diff",
+      "description": "Line/char level diff, unified/side-by-side, syntax highlight, merge actions"
+    },
+    "color": {
+      "name": "Color Converter",
+      "description": "HEX/RGB/HSL/HSV/CMYK conversion, contrast check, shades, palettes, WCAG compliance"
+    },
+    "password": {
+      "name": "Password Generator",
+      "description": "Configurable random passwords, length, charset, entropy, batch, readable mode"
+    }
+  },
+  "common": {
+    "input": "Input",
+    "output": "Output",
+    "copy": "Copy",
+    "copied": "Copied",
+    "clear": "Clear",
+    "download": "Download",
+    "settings": "Settings",
+    "preview": "Preview",
+    "format": "Format",
+    "minify": "Minify",
+    "encode": "Encode",
+    "decode": "Decode",
+    "generate": "Generate",
+    "parse": "Parse",
+    "convert": "Convert",
+    "compress": "Compress",
+    "compare": "Compare",
+    "swap": "Swap",
+    "reset": "Reset",
+    "example": "Example",
+    "language": "Language",
+    "theme": "Theme",
+    "dark": "Dark",
+    "light": "Light",
+    "auto": "Auto",
+    "rows": "Rows",
+    "indent": "Indent",
+    "encoding": "Encoding",
+    "delimiter": "Delimiter",
+    "quote": "Quote",
+    "header": "Header",
+    "ignoreCase": "Ignore case",
+    "wholeWord": "Whole word",
+    "regex": "Regex",
+    "lineNumbers": "Line numbers",
+    "wordWrap": "Word wrap",
+    "readOnly": "Read-only",
+    "error": "Error",
+    "warning": "Warning",
+    "success": "Success",
+    "info": "Info",
+    "loading": "Loading...",
+    "ready": "Ready",
+    "copiedToClipboard": "Copied to clipboard",
+    "copyFailed": "Copy failed",
+    "downloadReady": "Download ready",
+    "noData": "No data",
+    "noMatch": "No match",
+    "invalidInput": "Invalid input",
+    "invalidFormat": "Invalid format",
+    "parseError": "Parse error",
+    "formatError": "Format error",
+    "fileTooLarge": "File too large",
+    "unsupportedFormat": "Unsupported format",
+    "dragDropHere": "Drag file here or click to select",
+    "orClickToSelect": "or click to select",
+    "pasteOrType": "Paste or type content...",
+    "outputWillAppearHere": "Output will appear here...",
+    "characters": "chars",
+    "words": "words",
+    "lines": "lines",
+    "bytes": "bytes",
+    "paragraphs": "paragraphs",
+    "sentences": "sentences",
+    "readTime": "Read time",
+    "minutes": "min",
+    "seconds": "sec",
+    "copiedSuccess": "Copied successfully",
+    "downloadSuccess": "Downloaded successfully",
+    "settingsSaved": "Settings saved",
+    "resetDone": "Reset done"
+  },
+  "caseTool": {
+    "uppercase": "UPPERCASE",
+    "lowercase": "lowercase",
+    "capitalize": "Capitalize",
+    "camelCase": "camelCase",
+    "pascalCase": "PascalCase",
+    "snakeCase": "snake_case",
+    "kebabCase": "kebab-case",
+    "constantCase": "CONSTANT_CASE",
+    "sentenceCase": "Sentence case",
+    "toggleCase": "tOGGLE cASE",
+    "titleCase": "Title Case"
+  },
+  "countTool": {
+    "totalChars": "Total characters",
+    "totalWords": "Total words",
+    "totalLines": "Total lines",
+    "nonEmptyLines": "Non-empty lines",
+    "chineseChars": "Chinese characters",
+    "englishWords": "English words",
+    "numbers": "Numbers",
+    "punctuation": "Punctuation",
+    "spaces": "Spaces",
+    "charDistribution": "Character distribution",
+    "wordFrequency": "Word frequency",
+    "topWords": "Top {{n}} words",
+    "readingTime": "Estimated reading time",
+    "chineseSpeed": "Chinese {{speed}} chars/min",
+    "englishSpeed": "English {{speed}} words/min"
+  },
+  "loremTool": {
+    "language": "Language",
+    "latin": "Latin",
+    "chinese": "Chinese",
+    "paragraphs": "Paragraphs",
+    "sentences": "Sentences",
+    "words": "Words",
+    "startWithLorem": "Start with Lorem ipsum",
+    "generate": "Generate"
+  },
+  "markdownTool": {
+    "editor": "Editor",
+    "preview": "Preview",
+    "split": "Split",
+    "fullscreen": "Fullscreen",
+    "toolbar": "Toolbar",
+    "heading": "Heading",
+    "bold": "Bold",
+    "italic": "Italic",
+    "strikethrough": "Strikethrough",
+    "code": "Inline code",
+    "codeBlock": "Code block",
+    "link": "Link",
+    "image": "Image",
+    "blockquote": "Blockquote",
+    "ul": "Unordered list",
+    "ol": "Ordered list",
+    "task": "Task list",
+    "table": "Table",
+    "hr": "Horizontal rule",
+    "math": "Math",
+    "emoji": "Emoji"
+  },
+  "dedupTool": {
+    "removeDuplicates": "Deduplicate",
+    "sortAsc": "Sort A-Z",
+    "sortDesc": "Sort Z-A",
+    "removeEmpty": "Remove empty",
+    "reverse": "Reverse",
+    "trimWhitespace": "Trim whitespace",
+    "originalLines": "Original lines",
+    "resultLines": "Result lines",
+    "removedCount": "Removed"
+  },
+  "replaceTool": {
+    "find": "Find",
+    "replaceWith": "Replace with",
+    "addRule": "Add rule",
+    "replaceAll": "Replace all",
+    "preview": "Preview",
+    "matches": "Matches",
+    "replacements": "Replacements"
+  },
+  "escapeTool": {
+    "mode": "Mode",
+    "escape": "Escape",
+    "unescape": "Unescape",
+    "json": "JSON",
+    "html": "HTML",
+    "sql": "SQL",
+    "shell": "Shell",
+    "csv": "CSV",
+    "regex": "Regex",
+    "perLine": "Per-line lenient",
+    "perLineHint": "Process each line independently, failures don't affect others"
+  },
+  "maskTool": {
+    "maskChar": "Mask char",
+    "asterisk": "Asterisk",
+    "hash": "Hash",
+    "keepFirstLast": "Keep first/last",
+    "customWords": "Custom sensitive words",
+    "customWordsHint": "Comma or newline separated, matched as whole words",
+    "detected": "Detected",
+    "items": "sensitive items",
+    "rules": "Rules",
+    "idCard": "ID Card",
+    "bankCard": "Bank Card",
+    "phone": "Phone",
+    "email": "Email",
+    "ip": "IP Address",
+    "chineseName": "Chinese Name",
+    "qqWechat": "QQ/WeChat"
+  },
+  "moneyTool": {
+    "amount": "Amount",
+    "placeholder": "Enter amount, e.g. 123456.78",
+    "full": "Add '整'",
+    "result": "Chinese financial",
+    "units": {
+      "yuan": "Yuan",
+      "jiao": "Jiao",
+      "fen": "Fen",
+      "zero": "Zero",
+      "integer": "Integer"
+    }
+  },
+  "base64Tool": {
+    "encode": "Encode",
+    "decode": "Decode",
+    "urlSafe": "URL-safe",
+    "utf8": "UTF-8",
+    "file": "File",
+    "text": "Text",
+    "dropFile": "Drop file here",
+    "maxSize": "Max 10MB"
+  },
+  "urlTool": {
+    "encode": "Encode",
+    "decode": "Decode",
+    "component": "Component",
+    "fullUrl": "Full URL",
+    "rfc3986": "RFC 3986",
+    "formEncoded": "application/x-www-form-urlencoded"
+  },
+  "queryTool": {
+    "parseUrl": "Parse URL",
+    "buildQuery": "Build Query",
+    "urlPlaceholder": "Paste full URL...",
+    "key": "Key",
+    "value": "Value",
+    "addParam": "Add param",
+    "removeParam": "Remove param",
+    "decoded": "Decoded",
+    "encoded": "Encoded"
+  },
+  "uuidTool": {
+    "v1": "v1 (time)",
+    "v4": "v4 (random)",
+    "v7": "v7 (timestamp)",
+    "count": "Count",
+    "uppercase": "Uppercase",
+    "braces": "Braces",
+    "hyphens": "Hyphens",
+    "generate": "Generate"
+  },
+  "binaryTool": {
+    "fromBase": "From base",
+    "toBase": "To base",
+    "autoDetect": "Auto-detect",
+    "bitView": "Bit view",
+    "bitwiseOps": "Bitwise ops",
+    "bigIntNotice": "Beyond 2^53 uses BigInt for precision"
+  },
+  "jwtTool": {
+    "header": "Header",
+    "payload": "Payload",
+    "signature": "Signature",
+    "algorithm": "Algorithm",
+    "expired": "Expired",
+    "expiresIn": "Expires in",
+    "issuedAt": "Issued at",
+    "notBefore": "Not before",
+    "subject": "Subject",
+    "issuer": "Issuer",
+    "audience": "Audience",
+    "jwtId": "JWT ID",
+    "decode": "Decode",
+    "verifySignature": "Verify signature (needs public key)",
+    "invalidToken": "Invalid token"
+  },
+  "jsonTool": {
+    "format": "Format",
+    "minify": "Minify",
+    "validate": "Validate",
+    "treeView": "Tree view",
+    "copy": "Copy",
+    "download": "Download",
+    "errorAt": "Error at",
+    "line": "Line",
+    "column": "Column"
+  },
+  "jsonTypeTool": {
+    "typescript": "TypeScript",
+    "go": "Go",
+    "java": "Java",
+    "optional": "Optional fields",
+    "readonly": "Readonly",
+    "generate": "Generate types",
+    "rootName": "Root type name",
+    "mergeArrays": "Merge array element types"
+  },
+  "xmlTool": {
+    "format": "Format",
+    "minify": "Minify",
+    "xpath": "XPath query",
+    "namespaces": "Namespaces",
+    "validate": "Validate"
+  },
+  "yamlTool": {
+    "toJson": "To JSON",
+    "toYaml": "To YAML",
+    "validate": "Validate",
+    "expandAnchors": "Expand anchors"
+  },
+  "csvTool": {
+    "toJson": "To JSON",
+    "toCsv": "To CSV",
+    "delimiter": "Delimiter",
+    "hasHeader": "First row as header",
+    "quoteChar": "Quote char",
+    "preview": "Preview",
+    "rows": "Rows"
+  },
+  "sqlTool": {
+    "format": "Format",
+    "minify": "Minify",
+    "uppercase": "Uppercase keywords",
+    "lowercase": "Lowercase keywords",
+    "preserve": "Preserve case",
+    "indent": "Indent",
+    "splitStatements": "Split statements"
+  },
+  "hashTool": {
+    "algorithm": "Algorithm",
+    "md5": "MD5",
+    "sha1": "SHA-1",
+    "sha256": "SHA-256",
+    "sha512": "SHA-512",
+    "hmac": "HMAC",
+    "key": "Key",
+    "file": "File",
+    "text": "Text",
+    "compare": "Compare",
+    "match": "Match",
+    "noMatch": "No match"
+  },
+  "regexTool": {
+    "pattern": "Pattern",
+    "flags": "Flags",
+    "testString": "Test string",
+    "replaceWith": "Replace with",
+    "matches": "Matches",
+    "groups": "Groups",
+    "matchInfo": "Match info",
+    "replacePreview": "Replace preview",
+    "global": "Global",
+    "ignoreCase": "Ignore case",
+    "multiline": "Multiline",
+    "sticky": "Sticky",
+    "unicode": "Unicode",
+    "templates": "Templates",
+    "email": "Email",
+    "url": "URL",
+    "ip": "IP",
+    "phone": "Phone",
+    "idCard": "ID Card",
+    "date": "Date",
+    "time": "Time"
+  },
+  "curlTool": {
+    "curlInput": "cURL command",
+    "fetch": "fetch",
+    "axios": "axios",
+    "nodejs": "Node.js",
+    "python": "Python requests",
+    "parse": "Parse",
+    "copy": "Copy",
+    "methods": "Supported options",
+    "url": "URL",
+    "method": "Method",
+    "headers": "Headers",
+    "data": "Body",
+    "form": "Form",
+    "auth": "Auth",
+    "cookie": "Cookie",
+    "userAgent": "User-Agent",
+    "referer": "Referer",
+    "followRedirect": "Follow redirect",
+    "insecure": "Insecure",
+    "compressed": "Compressed"
+  },
+  "httpStatusTool": {
+    "search": "Search",
+    "filter": "Filter",
+    "all": "All",
+    "informational": "1xx Informational",
+    "success": "2xx Success",
+    "redirection": "3xx Redirection",
+    "clientError": "4xx Client Error",
+    "serverError": "5xx Server Error",
+    "code": "Code",
+    "name": "Name",
+    "description": "Description"
+  },
+  "uaTool": {
+    "uaInput": "User-Agent",
+    "parse": "Parse",
+    "presets": "Presets",
+    "chromeWin": "Chrome Windows",
+    "safariMac": "Safari macOS",
+    "chromeAndroid": "Chrome Android",
+    "safariIos": "Safari iOS",
+    "wechat": "WeChat",
+    "edgeWin": "Edge Windows",
+    "browser": "Browser",
+    "version": "Version",
+    "engine": "Engine",
+    "os": "OS",
+    "osVersion": "OS Version",
+    "device": "Device",
+    "arch": "Arch"
+  },
+  "cssUnitTool": {
+    "fromUnit": "From unit",
+    "toUnit": "To unit",
+    "baseValue": "Base value",
+    "baseFontSize": "Base font size",
+    "viewportWidth": "Viewport width",
+    "viewportHeight": "Viewport height",
+    "px": "px",
+    "rem": "rem",
+    "em": "em",
+    "vw": "vw",
+    "vh": "vh",
+    "percent": "%",
+    "batch": "Batch convert",
+    "onePerLine": "One per line"
+  },
+  "timestampTool": {
+    "toDate": "Timestamp to date",
+    "toTimestamp": "Date to timestamp",
+    "now": "Now",
+    "milliseconds": "ms",
+    "seconds": "s",
+    "timezone": "Timezone",
+    "relative": "Relative",
+    "format": "Format"
+  },
+  "dateCalcTool": {
+    "mode": "Mode",
+    "diff": "Date diff",
+    "addSubtract": "Add/Subtract",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "years": "Years",
+    "months": "Months",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
+    "workdaysOnly": "Workdays only",
+    "customWeekend": "Custom weekend",
+    "result": "Result",
+    "daysDiff": "Days diff",
+    "workdaysDiff": "Workdays diff",
+    "isoWeek": "ISO week",
+    "dayOfYear": "Day of year",
+    "quarter": "Quarter",
+    "isLeapYear": "Leap year"
+  },
+  "cronTool": {
+    "expression": "Cron expression",
+    "parse": "Parse",
+    "nextRuns": "Next runs",
+    "presets": "Presets",
+    "everyMinute": "Every minute",
+    "everyHour": "Every hour",
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "minute": "Minute",
+    "hour": "Hour",
+    "dayOfMonth": "Day of month",
+    "month": "Month",
+    "dayOfWeek": "Day of week",
+    "description": "Description"
+  },
+  "mockDataTool": {
+    "fields": "Fields",
+    "rows": "Rows",
+    "format": "Format",
+    "json": "JSON",
+    "csv": "CSV",
+    "sql": "SQL INSERT",
+    "preview": "Preview",
+    "generate": "Generate",
+    "fieldTypes": {
+      "id": "ID",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "uuid": "UUID",
+      "address": "Address",
+      "company": "Company",
+      "date": "Date",
+      "ip": "IP",
+      "sentence": "Sentence",
+      "paragraph": "Paragraph",
+      "tags": "Tags",
+      "number": "Number",
+      "boolean": "Boolean",
+      "avatar": "Avatar URL",
+      "url": "URL",
+      "color": "Color",
+      "lorem": "Lorem",
+      "username": "Username",
+      "password": "Password",
+      "creditCard": "Credit Card",
+      "iban": "IBAN",
+      "mac": "MAC Address"
+    }
+  },
+  "qrTool": {
+    "content": "Content",
+    "size": "Size",
+    "margin": "Margin",
+    "errorCorrection": "Error correction",
+    "foreground": "Foreground",
+    "background": "Background",
+    "logo": "Logo",
+    "logoSize": "Logo size",
+    "download": "Download",
+    "formats": "Formats"
+  },
+  "imageCompressTool": {
+    "quality": "Quality",
+    "maxWidth": "Max width",
+    "maxHeight": "Max height",
+    "format": "Format",
+    "originalSize": "Original size",
+    "compressedSize": "Compressed size",
+    "reduction": "Reduction",
+    "batch": "Batch",
+    "downloadAll": "Download all"
+  },
+  "imageWatermarkTool": {
+    "textWatermark": "Text watermark",
+    "imageWatermark": "Image watermark",
+    "text": "Text",
+    "fontSize": "Font size",
+    "fontColor": "Font color",
+    "opacity": "Opacity",
+    "rotation": "Rotation",
+    "position": "Position",
+    "tile": "Tile",
+    "spacing": "Spacing",
+    "image": "Image",
+    "scale": "Scale",
+    "positions": {
+      "topLeft": "Top-left",
+      "topCenter": "Top-center",
+      "topRight": "Top-right",
+      "centerLeft": "Center-left",
+      "center": "Center",
+      "centerRight": "Center-right",
+      "bottomLeft": "Bottom-left",
+      "bottomCenter": "Bottom-center",
+      "bottomRight": "Bottom-right"
+    }
+  },
+  "imagePaletteTool": {
+    "colorCount": "Colors",
+    "algorithm": "Algorithm",
+    "medianCut": "Median cut",
+    "palette": "Palette",
+    "proportion": "Proportion",
+    "cssVariables": "CSS variables",
+    "copyColor": "Copy color"
+  },
+  "gradientTool": {
+    "type": "Type",
+    "linear": "Linear",
+    "radial": "Radial",
+    "conic": "Conic",
+    "angle": "Angle",
+    "shape": "Shape",
+    "circle": "Circle",
+    "ellipse": "Ellipse",
+    "position": "Position",
+    "stops": "Stops",
+    "addStop": "Add stop",
+    "removeStop": "Remove stop",
+    "random": "Random",
+    "reverse": "Reverse",
+    "presets": "Presets",
+    "cssOutput": "CSS",
+    "tailwindOutput": "Tailwind",
+    "reactOutput": "React",
+    "canvasOutput": "Canvas"
+  },
+  "shadowTool": {
+    "layers": "Layers",
+    "addLayer": "Add layer",
+    "removeLayer": "Remove layer",
+    "boxShadow": "Box shadow",
+    "textShadow": "Text shadow",
+    "x": "X offset",
+    "y": "Y offset",
+    "blur": "Blur",
+    "spread": "Spread",
+    "color": "Color",
+    "opacity": "Opacity",
+    "inset": "Inset",
+    "presets": "Presets",
+    "loadPreset": "Load preset",
+    "cssOutput": "CSS",
+    "tailwindOutput": "Tailwind",
+    "reactOutput": "React",
+    "cssVarsOutput": "CSS vars"
+  },
+  "imageConvertTool": {
+    "format": "Format",
+    "scaleMode": "Scale mode",
+    "none": "None",
+    "percent": "Percent",
+    "maxDimension": "Max dimension",
+    "exact": "Exact",
+    "keepRatio": "Keep ratio",
+    "width": "Width",
+    "height": "Height",
+    "quality": "Quality",
+    "whiteBackground": "White bg",
+    "originalSize": "Original size",
+    "convertedSize": "Converted size",
+    "download": "Download"
+  },
+  "diffTool": {
+    "left": "Left",
+    "right": "Right",
+    "mode": "Mode",
+    "unified": "Unified",
+    "sideBySide": "Side by side",
+    "lineLevel": "Line level",
+    "charLevel": "Char level",
+    "ignoreWhitespace": "Ignore whitespace",
+    "showLineNumbers": "Line numbers",
+    "added": "Added",
+    "removed": "Removed",
+    "modified": "Modified",
+    "unchanged": "Unchanged"
+  },
+  "colorTool": {
+    "input": "Input color",
+    "format": "Format",
+    "hex": "HEX",
+    "rgb": "RGB",
+    "rgba": "RGBA",
+    "hsl": "HSL",
+    "hsla": "HSLA",
+    "hsv": "HSV",
+    "cmyk": "CMYK",
+    "named": "Named",
+    "contrast": "Contrast",
+    "wcag": "WCAG",
+    "aa": "AA",
+    "aaa": "AAA",
+    "largeText": "Large text",
+    "normalText": "Normal text",
+    "shades": "Shades",
+    "tints": "Tints",
+    "palettes": "Palettes",
+    "complementary": "Complementary",
+    "analogous": "Analogous",
+    "triadic": "Triadic",
+    "tetradic": "Tetradic"
+  },
+  "passwordTool": {
+    "length": "Length",
+    "uppercase": "Uppercase",
+    "lowercase": "Lowercase",
+    "numbers": "Numbers",
+    "symbols": "Symbols",
+    "excludeSimilar": "Exclude similar",
+    "excludeAmbiguous": "Exclude ambiguous",
+    "readable": "Readable",
+    "entropy": "Entropy",
+    "bits": "bits",
+    "strength": "Strength",
+    "veryWeak": "Very weak",
+    "weak": "Weak",
+    "fair": "Fair",
+    "good": "Good",
+    "strong": "Strong",
+    "veryStrong": "Very strong",
+    "generate": "Generate",
+    "count": "Count",
+    "copyAll": "Copy all"
+  }
+}
