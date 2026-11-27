@@ -29,7 +29,7 @@ export default function App() {
           <span className="text-gray-500 text-sm ml-3 font-normal hidden sm:inline">{translate('app.subtitle')}</span>
         </h1>
         <div className="flex-none flex items-center gap-2 md:gap-3">
-          <span className="hidden sm:inline text-xs text-gray-500">{translate('app.toolCount', { count: categories.length })}</span>
+          <span className="hidden sm:inline text-xs text-gray-500">{translate('app.toolCount', { toolCount: tools.length, categoryCount: categories.length })}</span>
           
           {/* 语言切换器 */}
           <div className="flex items-center gap-1">

@@ -3,7 +3,7 @@
     "title": "前端工具箱",
     "subtitle": "纯本地 · 无上传 · 隐私安全",
     "footer": "所有数据在浏览器本地处理，不会上传到任何服务器 · Apache 2.0 License",
-    "toolCount": "个工具 · {{count}} 个板块",
+    "toolCount": "{{toolCount}} 个工具 · {{categoryCount}} 个板块",
     "githubTooltip": "GitHub 源码 · 欢迎 Star",
     "siteTooltip": "作者主站 lucky845.top"
   },

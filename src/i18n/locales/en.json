@@ -3,7 +3,7 @@
     "title": "Frontend Toolbox",
     "subtitle": "Local-only · No upload · Privacy safe",
     "footer": "All data processed locally in your browser, never uploaded to any server · Apache 2.0 License",
-    "toolCount": "{{count}} tools · {{categories}} categories",
+    "toolCount": "{{toolCount}} tools · {{categoryCount}} categories",
     "githubTooltip": "GitHub source · Star welcome",
     "siteTooltip": "Author site lucky845.top"
   },
