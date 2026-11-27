@@ -9,6 +9,18 @@ export default function App() {
   const activeTool = tools.find(tool => tool.id === active)
   const total = tools.length
   const mainRef = useRef(null)
+  const [expandedCategories, setExpandedCategories] = useState(() => {
+    // 默认展开所有分类，可从 localStorage 恢复
+    const saved = localStorage.getItem('expandedCategories')
+    if (saved) {
+      try {
+        return new Set(JSON.parse(saved))
+      } catch {
+        return new Set(categories.map(c => c.id))
+      }
+    }
+    return new Set(categories.map(c => c.id))
+  })
 
   // 切换工具时主工作区回到顶部，避免停留在一屏内容中段
   useEffect(() => {
@@ -18,6 +30,19 @@ export default function App() {
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng)
     localStorage.setItem('i18n-lng', lng)
+  }
+
+  const toggleCategory = (catId) => {
+    setExpandedCategories(prev => {
+      const next = new Set(prev)
+      if (next.has(catId)) {
+        next.delete(catId)
+      } else {
+        next.add(catId)
+      }
+      localStorage.setItem('expandedCategories', JSON.stringify([...next]))
+      return next
+    })
   }
 
   return (
@@ -83,33 +108,45 @@ export default function App() {
 
       <div className="flex flex-1 min-h-0">
         <nav className="w-16 md:w-60 flex-none border-r border-gray-800 py-4 px-2 md:px-3 space-y-5 overflow-y-auto overscroll-contain">
-          {categories.map(cat => (
-            <div key={cat.id}>
-              <div className="flex items-center justify-center md:justify-start gap-2 px-0 md:px-2 mb-1.5 text-[11px] font-semibold uppercase tracking-wider text-gray-500">
-                <span className="w-4 h-4 flex-none">{cat.icon}</span>
-                <span className="hidden md:inline truncate">{translate(`categories.${cat.id}`)}</span>
+          {categories.map(cat => {
+            const isExpanded = expandedCategories.has(cat.id)
+            return (
+              <div key={cat.id}>
+                <button
+                  onClick={() => toggleCategory(cat.id)}
+                  className="flex items-center justify-center md:justify-start gap-2 px-0 md:px-2 mb-1.5 w-full text-left"
+                  aria-expanded={isExpanded}
+                >
+                  <span className="w-4 h-4 flex-none">{cat.icon}</span>
+                  <span className="hidden md:inline truncate font-semibold uppercase tracking-wider text-gray-500 text-[11px]">
+                    {translate(`categories.${cat.id}`)}
+                  </span>
+                  <span className={`ml-auto transition-transform duration-200 ${isExpanded ? 'rotate-90' : ''}`}>
+                    {Icons.chevronDown}
+                  </span>
+                </button>
+                <div className={`space-y-0.5 transition-all duration-200 overflow-hidden ${isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}`}>
+                  {cat.tools.map(tool => (
+                    <button
+                      key={tool.id}
+                      onClick={() => setActive(tool.id)}
+                      title={translate(`tools.${tool.id}.name`)}
+                      className={`w-full text-left px-1.5 md:px-2.5 py-2 rounded-lg text-sm flex items-center justify-center md:justify-start gap-2.5 group transition
+                        ${active === tool.id
+                          ? 'bg-teal/10 text-teal border border-teal/25'
+                          : 'text-gray-400 hover:bg-gray-800/50 hover:text-gray-200 border border-transparent'}`}
+                    >
+                      <span className={`w-7 h-7 flex-none rounded-lg flex items-center justify-center transition
+                        ${active === tool.id ? 'bg-teal/20 text-teal' : 'bg-gray-800/60 text-gray-400 group-hover:bg-gray-700/60'}`}>
+                        {tool.icon}
+                      </span>
+                      <span className="truncate hidden md:inline">{translate(`tools.${tool.id}.name`)}</span>
+                    </button>
+                  ))}
+                </div>
               </div>
-              <div className="space-y-0.5">
-                {cat.tools.map(tool => (
-                  <button
-                    key={tool.id}
-                    onClick={() => setActive(tool.id)}
-                    title={translate(`tools.${tool.id}.name`)}
-                    className={`w-full text-left px-1.5 md:px-2.5 py-2 rounded-lg text-sm flex items-center justify-center md:justify-start gap-2.5 group transition
-                      ${active === tool.id
-                        ? 'bg-teal/10 text-teal border border-teal/25'
-                        : 'text-gray-400 hover:bg-gray-800/50 hover:text-gray-200 border border-transparent'}`}
-                  >
-                    <span className={`w-7 h-7 flex-none rounded-lg flex items-center justify-center transition
-                      ${active === tool.id ? 'bg-teal/20 text-teal' : 'bg-gray-800/60 text-gray-400 group-hover:bg-gray-700/60'}`}>
-                      {tool.icon}
-                    </span>
-                    <span className="truncate hidden md:inline">{translate(`tools.${tool.id}.name`)}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          ))}
+            )
+          })}
         </nav>
 
         {/* 右栏独立滚动容器：左侧导航滚动时右侧完全不动 */}

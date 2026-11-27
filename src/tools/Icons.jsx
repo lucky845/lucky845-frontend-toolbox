@@ -273,5 +273,10 @@ uuid: (
     <svg viewBox="0 0 24 24" {...base} className="w-5 h-5">
       <path d="M3 8h14l-3-3M21 16H7l3 3" />
     </svg>
+  ),
+  chevronDown: (
+    <svg viewBox="0 0 24 24" {...base} className="w-5 h-5">
+      <path d="M6 9l6 6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    </svg>
   )
 }
