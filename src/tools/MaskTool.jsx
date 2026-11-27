@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { Panel, TextArea, CopyBtn, Check, Segmented, Field, Select, Stat } from './Panel'
+import { Panel, TextArea, CopyBtn, Check, Segmented, Field, Select, Stat, Tip } from './Panel'
 
 // 文本脱敏：身份证 / 银行卡 / 手机号 / 邮箱 / IP / 姓名
 // 顺序很重要：更长的数字规则必须排在手机号之前，否则会被手机号规则先命中
@@ -13,6 +13,26 @@ const RULES = [
   ['name', '中文姓名', /(姓名|联系人|客户|收件人)([:：\s]+)([\u4e00-\u9fa5])([\u4e00-\u9fa5]{1,2})/g, (m, p, sep, a, b) => p + sep + a + '*'.repeat(b.length)],
   ['qq', 'QQ / 微信号', /\b(QQ|微信|WeChat|wx)[:：\s]*([A-Za-z0-9_-]{4,})/gi, (m, a, b) => a + '：' + b[0] + '*'.repeat(Math.max(2, b.length - 1)), false]
 ]
+
+// 每条规则的匹配说明：长规则对用户不直观，用 Tip 气泡讲清楚「什么才算命中」
+const TIPS = {
+  idcard: '匹配 18 位身份证号，掩掉中间 10 位，保留前 4 位和后 4 位。前后不能紧邻其它数字，避免误伤更长的数字串。',
+  bank: '匹配 16–19 位银行卡号，保留前 4 位和后 4 位，中间全部掩盖。',
+  phone: '匹配 11 位大陆手机号（1 开头，第二位 3–9），掩掉中间 4 位，保留号段前 3 位和后 4 位。',
+  email: '保留邮箱首字符与 @ 后面的域名，只掩盖用户名中间部分。',
+  ip: '匹配 IPv4 地址，掩掉中间两段，保留第一段和最后一段用于定位网段。',
+  name: (
+    <>
+      仅当姓名前面出现 <b>姓名</b>、<b>联系人</b>、<b>客户</b>、<b>收件人</b> 这四个前缀之一（
+      后面跟冒号、空格或换行）时才命中，掩掉名的部分、保留姓。
+      <br />
+      例：<code className="text-teal">姓名：张三</code> → <code className="text-teal">姓名：张*</code>
+      <br />
+      裸写的「张三」不会命中，避免误伤正文里的普通词汇。
+    </>
+  ),
+  qq: '匹配 QQ / 微信 / WeChat / wx 后面跟的账号，保留首字符，其余掩盖。'
+}
 
 // 自定义关键词的替换符号
 const MASKS = [
@@ -66,7 +86,10 @@ export default function MaskTool() {
     <div className="space-y-4">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
         {RULES.map(([id, label]) => (
-          <Check key={id} checked={!!enabled[id]} onChange={() => toggle(id)} label={label} />
+          <div key={id} className="flex items-center gap-1 min-w-0">
+            <Check checked={!!enabled[id]} onChange={() => toggle(id)} label={label} />
+            {TIPS[id] && <Tip>{TIPS[id]}</Tip>}
+          </div>
         ))}
       </div>
 
